@@ -21,8 +21,7 @@ public class ReachabilityTest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            navMesh.BuildNavMesh();
-            if (CalculateNewPath() == true)
+            if (CalculateNewPathReachable() == true)
             {
                 pathAvailable = true;
                 Debug.Log("Path available");
@@ -35,8 +34,9 @@ public class ReachabilityTest : MonoBehaviour
         }
     }
 
-    private bool CalculateNewPath()
+    public bool CalculateNewPathReachable ()
     {
+        navMesh.BuildNavMesh();
         spawnPosition.CalculatePath(targetPosition.position, navMeshPath);
         if (navMeshPath.status == NavMeshPathStatus.PathComplete) return true;
         return false;

@@ -1,7 +1,5 @@
-using Unity.AI.Navigation;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AI;
+
 
 public class PlaceablePreview: MonoBehaviour
 {
@@ -10,6 +8,8 @@ public class PlaceablePreview: MonoBehaviour
     private MeshFilter meshFilter;
     private MeshRenderer meshRenderer;
     private ReachabilityTest rt;
+
+    [SerializeField] private bool disableBuild = false;
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class PlaceablePreview: MonoBehaviour
     {
         // show preview with only mesh, snap to grid
         FollowMouseXZGridSnap();
-        if (Input.GetMouseButtonDown(0)) Place();
+        if (Input.GetMouseButtonUp(0)) Place();
     }
 
     private void FollowMouseXZGridSnap()
@@ -42,6 +42,13 @@ public class PlaceablePreview: MonoBehaviour
 
     private void Place()
     {
+        // Prevent building  case
+        if (disableBuild)
+        {
+            Debug.Log("Invalid placement!");
+            Destroy(this.gameObject);
+            return;
+        }
         // instantiate prefab with mesh off
         GameObject temp = Instantiate(placePrefab, transform.position, transform.rotation);
         temp.transform.parent = null; // unparent
@@ -64,5 +71,24 @@ public class PlaceablePreview: MonoBehaviour
             Debug.Log("Impossible placement");
             transform.GetChild(0).gameObject.SetActive(true);
         }
+        Destroy(this.gameObject);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Fortress"))
+        {
+            disableBuild = true;
+        }
+
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Fortress"))
+        {
+            disableBuild = false;
+        }
+
     }
 }

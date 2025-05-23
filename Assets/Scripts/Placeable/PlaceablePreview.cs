@@ -1,3 +1,5 @@
+using Unity.AI.Navigation;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -45,7 +47,10 @@ public class PlaceablePreview: MonoBehaviour
         temp.transform.parent = null; // unparent
         temp.GetComponentInChildren<MeshRenderer>().enabled = false;
 
-        // re-bake navmesh and check reachability
+        // re-bake navmesh
+        rt.navMesh.BuildNavMesh();
+        
+        // check reachability
         if(rt.CalculateNewPathReachable())
         {
             // if reachable, activate mesh
@@ -53,10 +58,11 @@ public class PlaceablePreview: MonoBehaviour
         }
         else
         {
-            // if not, delete gameObject
+            transform.GetChild(0).gameObject.SetActive(false);
             Destroy(temp);
+            rt.navMesh.BuildNavMesh();
             Debug.Log("Impossible placement");
+            transform.GetChild(0).gameObject.SetActive(true);
         }
-
     }
 }

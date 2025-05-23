@@ -6,7 +6,7 @@ public class ReachabilityTest : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent spawnPosition;
     [SerializeField] private Transform targetPosition;
-    [SerializeField] private NavMeshSurface navMesh;
+    public NavMeshSurface navMesh;
 
     [HideInInspector]
     public bool pathAvailable = false;
@@ -21,6 +21,7 @@ public class ReachabilityTest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            navMesh.BuildNavMesh();
             if (CalculateNewPathReachable() == true)
             {
                 pathAvailable = true;
@@ -36,7 +37,6 @@ public class ReachabilityTest : MonoBehaviour
 
     public bool CalculateNewPathReachable ()
     {
-        navMesh.BuildNavMesh();
         spawnPosition.CalculatePath(targetPosition.position, navMeshPath);
         if (navMeshPath.status == NavMeshPathStatus.PathComplete) return true;
         return false;

@@ -1,15 +1,17 @@
 using UnityEngine;
 
-
+[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(Rigidbody))]
 public class PlaceablePreview: MonoBehaviour
 {
     [SerializeField] private GameObject placePrefab;
+    [SerializeField] public int structureCost;
     private PlacementGrid grid;
     private MeshFilter meshFilter;
     private MeshRenderer meshRenderer;
     private ReachabilityTest rt;
 
-    [SerializeField] private bool disableBuild = false;
+    private bool disableBuild = false;
 
     private void Start()
     {
@@ -42,11 +44,12 @@ public class PlaceablePreview: MonoBehaviour
 
     private void Place()
     {
-        // Prevent building  case
+        // Prevent building over something
         if (disableBuild)
         {
-            Debug.Log("Invalid placement!");
+            Debug.Log("Invalid placement over object!");
             Destroy(this.gameObject);
+            GameManager.Instance.AddToMoney(structureCost); // refund Player
             return;
         }
         // instantiate prefab with mesh off
@@ -68,8 +71,9 @@ public class PlaceablePreview: MonoBehaviour
             transform.GetChild(0).gameObject.SetActive(false);
             Destroy(temp);
             rt.navMesh.BuildNavMesh();
-            Debug.Log("Impossible placement");
+            Debug.Log("Impossible placement, no close payths allowed!");
             transform.GetChild(0).gameObject.SetActive(true);
+            GameManager.Instance.AddToMoney(structureCost); // refund Player
         }
         Destroy(this.gameObject);
     }

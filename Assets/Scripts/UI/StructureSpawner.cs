@@ -7,6 +7,15 @@ public class StructureSpawner : MonoBehaviour
 
     public void SpawnWall()
     {
-        Instantiate(wallPreviewPrefab, spawnPosition, Quaternion.identity);
+        int cost = wallPreviewPrefab.GetComponent<PlaceablePreview>().structureCost;
+        if (GameManager.Instance.GetCurrentMoney() > cost)
+        {
+            Instantiate(wallPreviewPrefab, spawnPosition, Quaternion.identity);
+            GameManager.Instance.AddToMoney(-cost);
+        }
+        else
+        {
+            Debug.Log("Not enough money!");
+        }
     }
 }

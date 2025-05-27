@@ -5,17 +5,12 @@ public class Projectile : MonoBehaviour
     private Transform target; // Bersaglio da inseguire
     public float speed = 10f; // Velocità del proiettile
     public float damage = 20f; // Danno inflitto al bersaglio
+    public Transform resetPosition;
 
-    // Imposta il bersaglio da colpire
-    public void Seek(Transform _target)
-    {
-        target = _target;
-    }
+    public bool bIsActive;
 
     void Update()
     {
-        if (target == null) return;
-
         // Direzione verso il bersaglio
         Vector3 direction = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
@@ -24,7 +19,6 @@ public class Projectile : MonoBehaviour
         if (direction.magnitude <= distanceThisFrame)
         {
             HitTarget();
-            return;
         }
 
         // Altrimenti si muove verso il bersaglio
@@ -34,6 +28,22 @@ public class Projectile : MonoBehaviour
     // Colpisce il bersaglio
     void HitTarget()
     {
-        Destroy(gameObject);
+        DeactivateProjectile();
+        //TODO: INSERIRE FUNZIONE DANNO AL NEMICO
+    }
+
+    public void ActivateProjectile(Transform _target)
+    { 
+        gameObject.SetActive(true);
+        bIsActive = true;
+        target = _target;
+    }
+
+    public void DeactivateProjectile()
+    { 
+        gameObject.SetActive(false);
+        bIsActive = false;
+        transform.position = resetPosition.position;
+
     }
 }

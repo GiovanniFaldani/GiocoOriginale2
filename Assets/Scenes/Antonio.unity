@@ -603,6 +603,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 3218513039422924193, guid: d1c92abb881b48742a6f628e85b9bdf0, type: 3}
+      propertyPath: poolSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218513039422924193, guid: d1c92abb881b48742a6f628e85b9bdf0, type: 3}
+      propertyPath: spawnPosition
+      value: 
+      objectReference: {fileID: 631915145}
+    - target: {fileID: 3218513039422924193, guid: d1c92abb881b48742a6f628e85b9bdf0, type: 3}
+      propertyPath: projectile_Prefab
+      value: 
+      objectReference: {fileID: 8360844966016763615, guid: 3024f905786c7f64c95693a5daf186a1, type: 3}
     - target: {fileID: 4385942874534027314, guid: d1c92abb881b48742a6f628e85b9bdf0, type: 3}
       propertyPath: m_Radius
       value: 1.25
@@ -613,7 +625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5646380058038002689, guid: d1c92abb881b48742a6f628e85b9bdf0, type: 3}
       propertyPath: fireRate
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5646380058038002689, guid: d1c92abb881b48742a6f628e85b9bdf0, type: 3}
       propertyPath: firePoint
@@ -629,7 +641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7868531235220360673, guid: d1c92abb881b48742a6f628e85b9bdf0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9593
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7868531235220360673, guid: d1c92abb881b48742a6f628e85b9bdf0, type: 3}
       propertyPath: m_LocalPosition.z

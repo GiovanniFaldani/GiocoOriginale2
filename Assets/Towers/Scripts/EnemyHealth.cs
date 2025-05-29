@@ -24,7 +24,6 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth -= amount;
         currentHealth = Mathf.Max(currentHealth, 0);
-        onTakeDamage?.Invoke();
 
         if (currentHealth <= 0)
         {
@@ -41,8 +40,6 @@ public class EnemyHealth : MonoBehaviour
     /// Gestione della morte del nemico.    
     private void Die()
     {
-        onDie?.Invoke();
-
         // Rimuovi o disattiva il nemico (torna nel pool)
         ObjectPooler.ReturnToPool(gameObject);
     }

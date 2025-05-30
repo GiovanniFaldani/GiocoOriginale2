@@ -258,8 +258,8 @@ MonoBehaviour:
     priorit\xE0 al primo nemico che entra nel suo raggio, e cambia target solo dopo
     la sua morte.\r\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a229575b3fe84974e92b44b330ea8fea, type: 2}
-  m_sharedMaterial: {fileID: -5096054698049535722, guid: a229575b3fe84974e92b44b330ea8fea, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 53ba278b54390de42985638f6b92d9cc, type: 2}
+  m_sharedMaterial: {fileID: -7887559384944599177, guid: 53ba278b54390de42985638f6b92d9cc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -283,13 +283,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21
-  m_fontSizeBase: 21
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535

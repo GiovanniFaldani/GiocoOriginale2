@@ -2,6 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 
 public class Projectile_Pool : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Projectile_Pool : MonoBehaviour
 
     public Transform spawnPosition;
 
-    [SerializeField] GameObject projectile_Prefab;
+    public GameObject projectile_Prefab;
 
     public int poolSize;
 

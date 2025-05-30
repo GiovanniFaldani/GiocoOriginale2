@@ -1,17 +1,37 @@
 using UnityEngine;
 
 
+// Handles Destruction of structures
 public class DestroyHandler : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private StructureSpawner spawner;
+    private ReachabilityTest rt;
+
+    private void Start()
     {
-        
+        spawner = FindAnyObjectByType<StructureSpawner>().GetComponent<StructureSpawner>();
+        rt = FindAnyObjectByType<ReachabilityTest>().GetComponent<ReachabilityTest>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetMouseButtonUp(1)) DestroyWithRayCast();
+    }
+
+    private void DestroyWithRayCast()
+    {
+        //Raycast mouse position X and Z
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            if(hit.collider.CompareTag("Wall") || hit.collider.CompareTag("Turret"))
+            {
+                StructureType strType = hit.collider.GetComponent<StructureType>();
+                GameManager.Instance.AddToMoney(Mathf.RoundToInt(spawner.costs[strType.type] * 0.2f));
+                Destroy(hit.collider.gameObject);
+                rt.navMesh.BuildNavMesh();
+            }
+        }
     }
 }

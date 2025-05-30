@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placePrefab: {fileID: 6300880815660339416, guid: c131c1ace2c92c04898c20cb54385d16, type: 3}
   structureCost: 1
+  structureType: 0
 --- !u!65 &722747351035710790
 BoxCollider:
   m_ObjectHideFlags: 0

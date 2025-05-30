@@ -668,6 +668,7 @@ GameObject:
   - component: {fileID: 129812381}
   - component: {fileID: 129812383}
   - component: {fileID: 129812382}
+  - component: {fileID: 129812384}
   m_Layer: 5
   m_Name: HudUI
   m_TagString: Untagged
@@ -725,6 +726,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameUI: 2
+--- !u!114 &129812384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129812380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82c6d81efba3f0488865f3817d1372f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &169507469
 GameObject:
   m_ObjectHideFlags: 0
@@ -3632,7 +3645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHp: 10
   currentHp: 0
-  startingMoney: 20
+  startingMoney: 200
   currentMoney: 0
 --- !u!1 &1568716062
 GameObject:
@@ -5259,7 +5272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6176641020097952155, guid: ebc08a2be2e76854891e82394cdd2a98, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 68.52
       objectReference: {fileID: 0}
     - target: {fileID: 6176641020097952155, guid: ebc08a2be2e76854891e82394cdd2a98, type: 3}
       propertyPath: m_AnchoredPosition.x

@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -11,14 +12,14 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        Vector3 direction = (target.position - transform.position).normalized;
-        float frameDistance = speed * Time.deltaTime;
-
-        if (direction.magnitude <= frameDistance)
+        Vector3 totalMovement = target.position - transform.position;
+        float distance = totalMovement.magnitude;
+        
+        if (distance <= 1)
         {
             HitTarget();
         }
-        transform.Translate(direction * frameDistance, Space.World);
+        transform.Translate(totalMovement.normalized * speed * Time.deltaTime, Space.World);
     }
 
 

@@ -15,6 +15,7 @@ public class Projectile_Pool : MonoBehaviour
     public int poolSize;
 
     
+    //TODO implementare aggiornamento rotazione proiettile nell'update
 
     private void Start()
     {

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 722747351035710790}
   - component: {fileID: 786208625803243219}
   m_Layer: 2
-  m_Name: WallPreview
+  m_Name: Wall_Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placePrefab: {fileID: 6300880815660339416, guid: c131c1ace2c92c04898c20cb54385d16, type: 3}
   structureCost: 1
-  disableBuild: 0
 --- !u!65 &722747351035710790
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -163,7 +162,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9d25473813b28f143ba545376b1b197e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

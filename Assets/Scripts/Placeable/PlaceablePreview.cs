@@ -6,6 +6,7 @@ public class PlaceablePreview: MonoBehaviour
 {
     [SerializeField] private GameObject placePrefab;
     [SerializeField] public int structureCost;
+    [SerializeField] Spawnable structureType;
     private PlacementGrid grid;
     private MeshFilter meshFilter;
     private MeshRenderer meshRenderer;
@@ -54,6 +55,16 @@ public class PlaceablePreview: MonoBehaviour
         }
         // instantiate prefab with mesh off
         GameObject temp = Instantiate(placePrefab, transform.position, transform.rotation);
+        // rescale adjustments
+        switch (structureType)
+        {
+            case Spawnable.Wall:
+                break;
+            case Spawnable.ArcherTurret:
+                temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y + 1, temp.transform.position.z);
+                temp.transform.localScale = new Vector3(2, 1.2f, 2);
+                break;
+        }
         temp.transform.parent = null; // unparent
         temp.GetComponentInChildren<MeshRenderer>().enabled = false;
 

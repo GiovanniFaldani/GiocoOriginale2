@@ -1,46 +1,50 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+namespace Deprecated
 {
-    [SerializeField] private float speed = 3f;
-    private Waypoint _waypoint;
-    private int _currentWaypointIndex;
-    private Vector3 _targetPosition;
 
-    private void OnEnable()
+    public class Enemy : MonoBehaviour
     {
-        _waypoint = FindFirstObjectByType<Waypoint>();
-        _currentWaypointIndex = 0;
+        [SerializeField] private float speed = 3f;
+        private Waypoint _waypoint;
+        private int _currentWaypointIndex;
+        private Vector3 _targetPosition;
 
-        if (_waypoint != null && _waypoint.Points.Length > 0)
+        private void OnEnable()
         {
-            _targetPosition = _waypoint.GetWaypointPosition(_currentWaypointIndex);
-        }
-    }
+            _waypoint = FindFirstObjectByType<Waypoint>();
+            _currentWaypointIndex = 0;
 
-    void Update()
-    {
-        if (_waypoint == null || _currentWaypointIndex >= _waypoint.Points.Length)
-        {
-            ObjectPooler.ReturnToPool(gameObject);
-            return;
-        }
-
-        transform.position = Vector3.MoveTowards(transform.position, _targetPosition, speed * Time.deltaTime);
-
-        if (Vector3.Distance(transform.position, _targetPosition) < 0.1f)
-        {
-            _currentWaypointIndex++;
-            if (_currentWaypointIndex < _waypoint.Points.Length)
+            if (_waypoint != null && _waypoint.Points.Length > 0)
             {
                 _targetPosition = _waypoint.GetWaypointPosition(_currentWaypointIndex);
             }
-            else
+        }
+
+        void Update()
+        {
+            if (_waypoint == null || _currentWaypointIndex >= _waypoint.Points.Length)
             {
-                // Raggiunto l'ultimo waypoint
                 ObjectPooler.ReturnToPool(gameObject);
+                return;
+            }
+
+            transform.position = Vector3.MoveTowards(transform.position, _targetPosition, speed * Time.deltaTime);
+
+            if (Vector3.Distance(transform.position, _targetPosition) < 0.1f)
+            {
+                _currentWaypointIndex++;
+                if (_currentWaypointIndex < _waypoint.Points.Length)
+                {
+                    _targetPosition = _waypoint.GetWaypointPosition(_currentWaypointIndex);
+                }
+                else
+                {
+                    // Raggiunto l'ultimo waypoint
+                    ObjectPooler.ReturnToPool(gameObject);
+                }
             }
         }
-    }
 
+    }
 }

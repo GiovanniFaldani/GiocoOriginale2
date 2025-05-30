@@ -6,7 +6,7 @@ public class PlaceablePreview: MonoBehaviour
 {
     [SerializeField] private GameObject placePrefab;
     [SerializeField] public int structureCost;
-    [SerializeField] Spawnable structureType;
+    [SerializeField] private Spawnable structureType;
     private PlacementGrid grid;
     private MeshFilter meshFilter;
     private MeshRenderer meshRenderer;
@@ -55,6 +55,7 @@ public class PlaceablePreview: MonoBehaviour
         }
         // instantiate prefab with mesh off
         GameObject temp = Instantiate(placePrefab, transform.position, transform.rotation);
+
         // rescale adjustments
         switch (structureType)
         {
@@ -89,9 +90,20 @@ public class PlaceablePreview: MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Fortress")
+            || collision.collider.CompareTag("Turret"))
+        {
+            disableBuild = true;
+        }
+
+    }
+
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Fortress"))
+        if (collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Fortress") 
+            || collision.collider.CompareTag("Turret"))
         {
             disableBuild = true;
         }
@@ -100,7 +112,8 @@ public class PlaceablePreview: MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Fortress"))
+        if (collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Fortress")
+            || collision.collider.CompareTag("Turret"))
         {
             disableBuild = false;
         }

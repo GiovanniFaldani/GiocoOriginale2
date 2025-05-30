@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 1693899288330577984}
   m_Layer: 0
   m_Name: DoT_Tower
-  m_TagString: Fortress
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e1e452005cafd34f83726a1b858c2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firePoint: {fileID: 0}
   fireRate: 0
   targetsInRange: []
 --- !u!65 &551677635325571953

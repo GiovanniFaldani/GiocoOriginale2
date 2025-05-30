@@ -58,4 +58,38 @@ public class BaseTower : MonoBehaviour
             targetsInRange.Remove(other.transform);
         }
     }
+
+    // Pulisce la lista dei bersagli
+    private void CleanNullTargets()
+    {
+        int countBefore = targetsInRange.Count;
+
+        // Creiamo una nuova lista per i bersagli validi (non null)
+        List<Transform> validTargets = new List<Transform>();
+
+        // Controlliamo uno per uno gli elementi nella lista
+        foreach (Transform t in targetsInRange)
+        {
+            if (t != null && !t.gameObject.GetComponent<Enemy>().HP.IsDead)
+            {
+                validTargets.Add(t); // aggiungiamo solo quelli validi
+            }
+        }
+
+        // Sostituiamo la lista originale con quella pulita
+        targetsInRange = validTargets;
+
+        int countAfter = targetsInRange.Count;
+
+    }
+
+    // debug range
+    private void OnDrawGizmosSelected()
+    {
+        if (targetsInRange.Count > 0 && targetsInRange[0] != null)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(firePoint.position, targetsInRange[0].position);
+        }
+    }
 }

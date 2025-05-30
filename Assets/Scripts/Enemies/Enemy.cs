@@ -51,6 +51,9 @@ public class Enemy : MonoBehaviour
             { 
                 Debug.Log("Enemy " + gameObject.name + " damaged the fort for " + fortDamage + " damage!"); 
                 //GameManager.Instance.DamageFort(fortDamage);
+
+                //Temporary
+                Destroy(gameObject);
             }   
         }
         else

@@ -76,7 +76,7 @@ public class BaseTower : MonoBehaviour
         // Controlliamo uno per uno gli elementi nella lista
         foreach (Transform t in targetsInRange)
         {
-            if (t != null)
+            if (t != null && !t.gameObject.GetComponent<Enemy>().HP.IsDead)
             {
                 validTargets.Add(t); // aggiungiamo solo quelli validi
             }

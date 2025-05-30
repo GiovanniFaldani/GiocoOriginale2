@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 public class BaseTower : MonoBehaviour
 {
+    // Punto da cui parte il proiettile
+    [SerializeField] public Transform firePoint;
+
     [Header("Fire Rate Setting")]
     // Numero di colpi al secondo che la torretta può sparare
     [SerializeField] public float fireRate;

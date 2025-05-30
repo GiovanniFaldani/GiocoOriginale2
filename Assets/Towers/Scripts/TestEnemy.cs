@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class TestEnemy : MonoBehaviour
 {
     [SerializeField] private float speed = 3f;
     private Waypoint _waypoint;

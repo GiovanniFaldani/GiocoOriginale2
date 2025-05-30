@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        meshPivot = GetComponentInChildren<Transform>();
     }
     void Start()
     {

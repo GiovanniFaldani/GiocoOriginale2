@@ -90,15 +90,15 @@ public class PlaceablePreview: MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Fortress")
-            || collision.collider.CompareTag("Turret"))
-        {
-            disableBuild = true;
-        }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Fortress")
+    //        || collision.collider.CompareTag("Turret"))
+    //    {
+    //        disableBuild = true;
+    //    }
 
-    }
+    //}
 
     private void OnCollisionStay(Collision collision)
     {

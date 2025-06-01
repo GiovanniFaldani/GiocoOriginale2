@@ -70,9 +70,9 @@ RectTransform:
   - {fileID: 7388227707102658361}
   m_Father: {fileID: 3521042561203119958}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -160}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -15}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &2238912207927578807
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -661178197, guid: 3e8c40b3a8494ec43a951b6290fcd871, type: 3}
+  m_Sprite: {fileID: -1411819378, guid: c76d1fa93b2991549a1f515bffe47809, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 2.23
 --- !u!1 &4422773100953826663
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -50}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &4149140673961550410
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -661178197, guid: 3e8c40b3a8494ec43a951b6290fcd871, type: 3}
+  m_Sprite: {fileID: -1411819378, guid: c76d1fa93b2991549a1f515bffe47809, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 1.7
 --- !u!1 &7839199856744497466
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,8 +392,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: N.Wave Record
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a229575b3fe84974e92b44b330ea8fea, type: 2}
-  m_sharedMaterial: {fileID: -5096054698049535722, guid: a229575b3fe84974e92b44b330ea8fea, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b8314226fecb8024d9012a68b3928c62, type: 2}
+  m_sharedMaterial: {fileID: -8612263691852823830, guid: b8314226fecb8024d9012a68b3928c62, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 29.8
   m_fontSizeBase: 0
   m_fontWeight: 400
   m_enableAutoSizing: 1

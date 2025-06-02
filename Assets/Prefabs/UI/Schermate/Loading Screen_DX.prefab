@@ -142,7 +142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -643, y: 81}
+  m_AnchoredPosition: {x: -784, y: 159}
   m_SizeDelta: {x: 700, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1892780152049742723
@@ -241,14 +241,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8509804, g: 0.8509804, b: 0.8509804, a: 1}
+  m_Color: {r: 0.9137255, g: 0.8509804, b: 0.8509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1063291257, guid: bd1e5e83f6b4aa04caa9b06adb62ff6d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Per demolire una struttura puoi premere il tasto <b><color=#FF76FC> destro</color></b>
+  m_text: Per demolire una struttura puoi premere il tasto<color=#e77d85> destro</color>
     dopo averla selezionata!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 53ba278b54390de42985638f6b92d9cc, type: 2}
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -429,8 +429,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 77}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 150, y: 43.5}
+  m_SizeDelta: {x: 200, y: 267}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6525623719436217693
 CanvasRenderer:
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 83896223, guid: 97df48461c47cc541a0008572b75a486, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -508,11 +508,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7092001992142850688, guid: 093630a09ed1a664992ab19eafbf82d1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 230
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 7092001992142850688, guid: 093630a09ed1a664992ab19eafbf82d1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 230
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 7092001992142850688, guid: 093630a09ed1a664992ab19eafbf82d1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -544,11 +544,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7092001992142850688, guid: 093630a09ed1a664992ab19eafbf82d1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 129
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7092001992142850688, guid: 093630a09ed1a664992ab19eafbf82d1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -37
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 7092001992142850688, guid: 093630a09ed1a664992ab19eafbf82d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -561,6 +561,14 @@ PrefabInstance:
     - target: {fileID: 7092001992142850688, guid: 093630a09ed1a664992ab19eafbf82d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654461658963389672, guid: 093630a09ed1a664992ab19eafbf82d1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967156174768624156, guid: 093630a09ed1a664992ab19eafbf82d1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

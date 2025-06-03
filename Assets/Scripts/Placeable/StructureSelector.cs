@@ -62,6 +62,7 @@ public class StructureSelector : MonoBehaviour
                 if (selected != null)
                 {
                     Destroy(selected.GetComponent<Outline>());
+                    selected.GetComponentInParent<StructureType>().DeactivateRange();
                 }
 
                 // select new object
@@ -70,16 +71,19 @@ public class StructureSelector : MonoBehaviour
 
                 selected.AddComponent<Outline>();
                 selected.GetComponent<Outline>().OutlineColor = outlineColor;
+                selected.GetComponentInParent<StructureType>().ActivateRange();
             }
             else if(selected != null)
             {
                 Destroy(selected.GetComponent<Outline>());
+                selected.GetComponentInParent<StructureType>().DeactivateRange();
                 selected = null;
             }
         }
         else if (selected != null)
         {
             Destroy(selected.GetComponent<Outline>());
+            selected.GetComponentInParent<StructureType>().DeactivateRange();
             selected = null;
         }
     }

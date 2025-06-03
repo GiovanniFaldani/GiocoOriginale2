@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int startingMoney = 20;
     [SerializeField] private int currentMoney;
 
+    [SerializeField] private MessageUI messageUI;
+
     private int currentWave = 0;
     private int[] highScores = { 0, 0, 0 };
 
@@ -64,14 +66,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void GameOver()
+    public void GameOver()
     {
         UIManager.Instance.ShowUI(UIManager.GameUI.Lose);
     }
 
-    private void WinGame()
+    public void WinGame()
     {
         UIManager.Instance.ShowUI(UIManager.GameUI.Win);
+    }
+
+    public void DisplayMessage(string text, float duration)
+    {
+        messageUI.gameObject.SetActive(true);
+        messageUI.SetMessage(text, duration);
     }
 
 }

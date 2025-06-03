@@ -71,7 +71,7 @@ public class StructureSpawner : MonoBehaviour
         {
             GameObject preview = Instantiate(archerTurretPreviewPrefab, spawnPosition, Quaternion.identity);
             preview.transform.parent = null;
-            preview.transform.localScale = new Vector3(2, 1.2f, 2);
+            preview.transform.localScale = new Vector3(2, 2, 2);
             GameManager.Instance.AddToMoney(-costs[Spawnable.ArcherTurret]);
         }
         else

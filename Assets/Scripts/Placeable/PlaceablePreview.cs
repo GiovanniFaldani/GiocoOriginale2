@@ -56,12 +56,14 @@ public class PlaceablePreview: MonoBehaviour
         // instantiate prefab with mesh off
         GameObject temp = Instantiate(placePrefab, transform.position, transform.rotation);
 
-        // rescale adjustments
+        // rescale adjustments, set grid built attribute. Do not set built for traps
         switch (structureType)
         {
             case Spawnable.Wall:
+                grid.GetGridSnap(transform.position).built = true;
                 break;
             case Spawnable.ArcherTurret:
+                grid.GetGridSnap(transform.position).built = true;
                 temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y + 1, temp.transform.position.z);
                 temp.transform.localScale = new Vector3(2, 1.2f, 2);
                 break;
@@ -83,7 +85,7 @@ public class PlaceablePreview: MonoBehaviour
             transform.GetChild(0).gameObject.SetActive(false);
             Destroy(temp);
             rt.navMesh.BuildNavMesh();
-            Debug.Log("Impossible placement, no close payths allowed!");
+            Debug.Log("Impossible placement, no close paths allowed!");
             transform.GetChild(0).gameObject.SetActive(true);
             GameManager.Instance.AddToMoney(structureCost); // refund Player
         }

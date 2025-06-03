@@ -6,9 +6,11 @@ public class DestroyHandler : MonoBehaviour
 {
     private StructureSpawner spawner;
     private ReachabilityTest rt;
+    private PlacementGrid grid;
 
     private void Start()
     {
+        grid = FindAnyObjectByType<PlacementGrid>().GetComponent<PlacementGrid>();
         spawner = FindAnyObjectByType<StructureSpawner>().GetComponent<StructureSpawner>();
         rt = FindAnyObjectByType<ReachabilityTest>().GetComponent<ReachabilityTest>();
     }
@@ -27,6 +29,7 @@ public class DestroyHandler : MonoBehaviour
         {
             if(hit.collider.CompareTag("Wall") || hit.collider.CompareTag("Turret"))
             {
+                grid.GetGridSnap(hit.collider.transform.position).built = false;
                 StructureType strType = hit.collider.GetComponent<StructureType>();
                 GameManager.Instance.AddToMoney(Mathf.RoundToInt(spawner.costs[strType.type] * 0.2f));
                 Destroy(hit.collider.gameObject);

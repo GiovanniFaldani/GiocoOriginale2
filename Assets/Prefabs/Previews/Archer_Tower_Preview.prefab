@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placePrefab: {fileID: 2777911260358669632, guid: 7048921ff23ef464b9a9bf0f64c494fd, type: 3}
-  structureCost: 1
+  structureCost: 20
   structureType: 1
 --- !u!65 &5211591309902651515
 BoxCollider:

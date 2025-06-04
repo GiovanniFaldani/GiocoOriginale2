@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
     {
         meshPivot = GetComponentInChildren<Transform>();
         PF = GetComponent<Pathfinding>();
+        agent = GetComponent<NavMeshAgent>();
     }
     void Start()
     {

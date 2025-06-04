@@ -1,7 +1,6 @@
-using System.Runtime.InteropServices;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class MageProjectile : MonoBehaviour
 {
     public float speed; // Velocità del proiettile
     public float damage; // Danno inflitto al bersaglio
@@ -14,7 +13,7 @@ public class Projectile : MonoBehaviour
     {
         Vector3 totalMovement = target.position - transform.position;
         float distance = totalMovement.magnitude;
-        
+
         if (distance <= 1)
         {
             HitTarget();
@@ -27,12 +26,11 @@ public class Projectile : MonoBehaviour
     void HitTarget()
     {
         DeactivateProjectile();
-        //target.GetComponent<EnemyHealth>().TakeDamage(damage);
     }
 
 
     public void ActivateProjectile(Transform _target)
-    { 
+    {
         gameObject.SetActive(true);
         bIsActive = true;
         target = _target;

@@ -1,12 +1,9 @@
-using NUnit.Framework;
-using UnityEngine;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
+using UnityEngine;
 
-public class Projectile_Pool : MonoBehaviour
+public class MageProjectile_Pool : MonoBehaviour
 {
-    [SerializeField] List<Projectile> projectilePool = new List<Projectile>();
+    [SerializeField] List<MageProjectile> projectilePool = new List<MageProjectile>();
 
     public Transform spawnPosition;
 
@@ -14,8 +11,6 @@ public class Projectile_Pool : MonoBehaviour
 
     public int poolSize;
 
-    
-    //TODO implementare aggiornamento rotazione proiettile nell'update
 
     private void Start()
     {
@@ -23,25 +18,24 @@ public class Projectile_Pool : MonoBehaviour
         for (int i = 0; i < poolSize; i++)
         {
             GameObject proj;
-
             proj = Instantiate(projectile_Prefab, spawnPosition.position, Quaternion.identity);
-            projectilePool.Add(proj.GetComponent<Projectile>());            
+            projectilePool.Add(proj.GetComponent<MageProjectile>());
         }
         //disattivo oggetti instanziati
         for (int i = 0; i < projectilePool.Count; i++)
         {
             projectilePool[i].resetPosition = spawnPosition;
-            projectilePool[i].DeactivateProjectile(); 
+            projectilePool[i].DeactivateProjectile();
         }
     }
 
     //controllo se ho script del proiettile disponibili
-    public Projectile ChooseProjectile()
+    public MageProjectile ChooseProjectile()
     {
-        foreach (Projectile p in projectilePool)
+        foreach (MageProjectile p in projectilePool)
         {
             if (!p.bIsActive) //controllo se ho proiettili non attivi in scena
-            { 
+            {
                 return p;  //ritorna il primo proiettile disponibile
             }
         }

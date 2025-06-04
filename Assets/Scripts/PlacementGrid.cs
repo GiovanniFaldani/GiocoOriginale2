@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class PlacementGrid : MonoBehaviour
     [SerializeField] float gridHalfStep;
 
     public GridSquare[,] grid;
+    public List<GridSquare> path;
 
     private void Awake()
     {
@@ -39,17 +41,16 @@ public class PlacementGrid : MonoBehaviour
 
         if (grid != null)
         {
-            Vector3 gridCheck = new Vector3(-9, 0, -5);
-            GridSquare check = GetGridSnap(gridCheck);
+            //Vector3 gridCheck = new Vector3(-9, 0, -5);
+            //GridSquare check = GetGridSnap(gridCheck);
 
             foreach (GridSquare gsq in grid)
             {
                 Gizmos.color = Color.blue;
 
-                if(gsq == check)
-                {
-                    Gizmos.color = Color.red;
-                }
+                //if(gsq == check)
+                if (path.Contains(gsq))
+                { Gizmos.color = Color.red;  }
 
                 Gizmos.DrawCube(gsq.worldPosition, Vector3.one * (2 * (gridHalfStep - displayDelta)));
 
@@ -81,5 +82,25 @@ public class PlacementGrid : MonoBehaviour
 
         return grid[x, y];
     }
+    public List<GridSquare> GetNeighbours(GridSquare currentSquare)
+    {
+        List<GridSquare> neighbours = new List<GridSquare>();
 
+        for (int x = -1; x <= 1; x++)
+        {
+            for (int y = -1; y <= 1; y++)
+            {
+                if (x == 0 && y == 0)
+                    continue;
+
+                int checkX = currentSquare.gridX + x;
+                int checkY = currentSquare.gridY + y;
+
+                if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
+                    neighbours.Add(grid[checkX, checkY]);
+            }
+        }
+
+        return neighbours;
+    }
 }

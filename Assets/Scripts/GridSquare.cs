@@ -7,6 +7,11 @@ public class GridSquare
     public int gridY;
     public Vector3 worldPosition;
 
+    public int gCost;
+    public int hCost;
+    public int fCost { get { return gCost + hCost; } }
+    public GridSquare parent;
+
     public GridSquare(Vector3 _worldPosition,  int _gridX, int _gridY)
     {
         this.worldPosition = _worldPosition;

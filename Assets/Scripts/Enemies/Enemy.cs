@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -13,32 +14,37 @@ public struct Health
 }
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] bool testing;
 
-    public Health HP;
-    [SerializeField] private float speed;
-    [SerializeField] private float fortDamage;
+    private GridSquare currentSquare;
+    private Pathfinding PF;
 
     private NavMeshAgent agent;
-    [SerializeField] Transform meshPivot;
+    private Transform meshPivot;
+    private float deathTimer = 0; 
 
+    [Header("Enemy variables")]
+    public Health HP;
+    [SerializeField] private float speed;
+    [SerializeField] private float attackDamage;
+    [SerializeField] private float attackSpeed;
+    [SerializeField] private float waveWeight;
+    [Space(10)]
+
+    [Header("Test Animation variables")]
     [SerializeField] float fallOverTime = 1;
     [SerializeField] float disappearTime = 1;
-    private float deathTimer = 0;
+    [SerializeField] float gridSpeed = 0.25f;
 
     private void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
         meshPivot = GetComponentInChildren<Transform>();
+        PF = GetComponent<Pathfinding>();
     }
     void Start()
     {
         HP.CurrentHealth = HP.MaxHealth;
         HP.IsDead = false;
-    }
-    private void OnValidate()
-    {
-        if (agent != null)
-        { agent.speed = speed; }
     }
 
     // Update is called once per frame
@@ -48,9 +54,9 @@ public class Enemy : MonoBehaviour
         {
             TestInputs();
             
-            if(agent.remainingDistance < 0.2)
+            if(agent.remainingDistance < 0.2 && !testing)
             { 
-                Debug.Log("Enemy " + gameObject.name + " damaged the fort for " + fortDamage + " damage!"); 
+                Debug.Log("Enemy " + gameObject.name + " damaged the fort for " + attackDamage + " damage!"); 
                 //GameManager.Instance.DamageFort(fortDamage);
 
                 //Temporary
@@ -62,7 +68,10 @@ public class Enemy : MonoBehaviour
             deathTimer += Time.deltaTime;
             if (deathTimer <= fallOverTime)
             { meshPivot.localRotation = Quaternion.Euler(Vector3.Lerp(Vector3.zero, new Vector3(90, 0, 0), deathTimer / fallOverTime)); }
-            else if (deathTimer >= fallOverTime + disappearTime)
+            else
+            { meshPivot.localRotation = Quaternion.Euler(new Vector3(90, 0, 0)); }
+
+            if (deathTimer >= fallOverTime + disappearTime)
             { Destroy(gameObject); }
         }
     }
@@ -86,15 +95,26 @@ public class Enemy : MonoBehaviour
         {
             HP.CurrentHealth = Mathf.Clamp(HP.CurrentHealth - damage, 0, HP.MaxHealth);
             if (HP.CurrentHealth <= 0)
-            {
-                Death();
-            }
+            { Death(); }
         }
     }
 
     protected virtual void Death()
     {
         HP.IsDead = true;
+        agent.speed = 0;
         GetComponent<Collider>().enabled = false;
+    }
+    private void MoveCheck()
+    {
+        List<GridSquare> squareCheck = PF.FindPath(currentSquare.worldPosition, Vector3.zero);
+        foreach (GridSquare square in squareCheck)
+        {
+            Debug.Log(square.gridX + " - " + square.gridY);
+        }
+    }
+    private void ArriveCheck()
+    {
+
     }
 }

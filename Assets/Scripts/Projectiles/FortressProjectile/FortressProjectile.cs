@@ -1,11 +1,11 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
-public class MageProjectile : BaseProjectile
+public class FortressProjectile : BaseProjectile
 {
     protected override void HitTarget()
     {
         target.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-        base.HitTarget();        
+        base.HitTarget();
     }
-
 }

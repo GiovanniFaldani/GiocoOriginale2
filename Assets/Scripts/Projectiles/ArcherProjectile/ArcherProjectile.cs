@@ -1,11 +1,10 @@
 using UnityEngine;
 
-public class MageProjectile : BaseProjectile
+public class ArcherProjectile : BaseProjectile
 {
     protected override void HitTarget()
     {
         target.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-        base.HitTarget();        
+        base.HitTarget();
     }
-
 }

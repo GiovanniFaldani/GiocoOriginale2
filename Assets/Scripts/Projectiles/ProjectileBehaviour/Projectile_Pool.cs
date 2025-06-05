@@ -1,9 +1,12 @@
-using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 
-public class MageProjectile_Pool : MonoBehaviour
+public class Projectile_Pool : MonoBehaviour
 {
-    [SerializeField] List<MageProjectile> projectilePool = new List<MageProjectile>();
+    [SerializeField] List<BaseProjectile> projectilePool = new List<BaseProjectile>();
 
     public Transform spawnPosition;
 
@@ -11,7 +14,7 @@ public class MageProjectile_Pool : MonoBehaviour
 
     public int poolSize;
 
-
+    
     private void Start()
     {
         //instanzio gli oggetti in scena e aggiungo gli script alla lista
@@ -19,23 +22,25 @@ public class MageProjectile_Pool : MonoBehaviour
         {
             GameObject proj;
             proj = Instantiate(projectile_Prefab, spawnPosition.position, Quaternion.identity);
-            projectilePool.Add(proj.GetComponent<MageProjectile>());
+            proj.transform.parent = transform;
+            projectilePool.Add(proj.GetComponent<BaseProjectile>());            
         }
+
         //disattivo oggetti instanziati
         for (int i = 0; i < projectilePool.Count; i++)
         {
             projectilePool[i].resetPosition = spawnPosition;
-            projectilePool[i].DeactivateProjectile();
+            projectilePool[i].DeactivateProjectile(); 
         }
     }
 
     //controllo se ho script del proiettile disponibili
-    public MageProjectile ChooseProjectile()
+    public BaseProjectile ChooseProjectile()
     {
-        foreach (MageProjectile p in projectilePool)
+        foreach (BaseProjectile p in projectilePool)
         {
             if (!p.bIsActive) //controllo se ho proiettili non attivi in scena
-            {
+            { 
                 return p;  //ritorna il primo proiettile disponibile
             }
         }

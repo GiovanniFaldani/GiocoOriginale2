@@ -9,6 +9,7 @@ public class TriggerManager : MonoBehaviour
         if (tower != null)
         {
             tower.OnTriggerEnter(other);
+            Debug.Log($"[BaseTower] Nemico entrato nel raggio: {other.name}");
         }
     }
 
@@ -17,6 +18,7 @@ public class TriggerManager : MonoBehaviour
         if (tower != null)
         {
             tower.OnTriggerExit(other);
+            Debug.Log($"[BaseTower] Nemico uscito dal raggio: {other.name}");
         }
     }
 }

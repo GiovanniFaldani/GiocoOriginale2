@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3194646220663384071}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.86, z: 0}
+  m_LocalPosition: {x: 0, y: 1.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 4465459608675396127}
   - component: {fileID: 2857268757501914734}
   - component: {fileID: 1747849432492829065}
-  - component: {fileID: 6388456403862048631}
   - component: {fileID: 900362046340677864}
+  - component: {fileID: 684819526734045838}
   m_Layer: 0
   m_Name: Mage_Tower
   m_TagString: Turret
@@ -99,7 +99,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a7ab052ac79b25640b45ba608cc95ddc, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,22 +121,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6388456403862048631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5071210154838899514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073bc02260a9df84489a80f658cce0f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePool: []
-  spawnPosition: {fileID: 3367709339880186480}
-  projectile_Prefab: {fileID: 4144329986932634429, guid: 40ee6cb47bccb0247b5d1543a3eb82b4, type: 3}
-  poolSize: 5
 --- !u!114 &900362046340677864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,8 +134,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 3367709339880186480}
-  fireRate: 0
+  fireRate: 2
   targetsInRange: []
+  timer: 0
+  timerCooldown: 0.5
+--- !u!114 &684819526734045838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5071210154838899514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6777339cca08ad84baff6250a5bba743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePool: []
+  spawnPosition: {fileID: 3367709339880186480}
+  projectile_Prefab: {fileID: 4144329986932634429, guid: 40ee6cb47bccb0247b5d1543a3eb82b4, type: 3}
+  poolSize: 5
 --- !u!1001 &3069867531854862997
 PrefabInstance:
   m_ObjectHideFlags: 0

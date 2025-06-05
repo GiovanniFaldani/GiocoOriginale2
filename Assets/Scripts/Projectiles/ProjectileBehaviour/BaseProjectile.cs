@@ -6,38 +6,47 @@ public class BaseProjectile : MonoBehaviour
     public float speed; // Velocità del proiettile
     public float damage; // Danno inflitto al bersaglio
     public bool bIsActive; // bool per controllo proiettile attivo in scena
+    public float bulletLifetime;
+    Vector3 totalMovement;
 
-    private Transform target; // Bersaglio da inseguire
+    protected Transform target; // Bersaglio da inseguire
     public Transform resetPosition;
-    public Enemy enemy;
-
-    private void Start()
-    {
-        enemy = GetComponent<Enemy>();
-    }
 
     void Update()
     {
-        Vector3 totalMovement = target.position - transform.position;
+        bulletLifetime -= Time.deltaTime;
+
+        if (target != null && bulletLifetime > 0)
+        {
+            MoveProjectile();
+        }
+        else
+        { 
+            DeactivateProjectile();
+        }        
+    }
+
+    public void MoveProjectile()
+    {
+        totalMovement = target.position - transform.position;
         float distance = totalMovement.magnitude;
-        
+
         if (distance <= 1)
         {
             HitTarget();
         }
         transform.Translate(totalMovement.normalized * speed * Time.deltaTime, Space.World);
-    }
 
+    }
 
     // Colpisce il bersaglio
-    void HitTarget()
+    protected virtual void HitTarget()
     {
         DeactivateProjectile();
-        enemy.TakeDamage(damage);
     }
 
 
-    public void ActivateProjectile(Transform _target)
+    public virtual void ActivateProjectile(Transform _target)
     { 
         gameObject.SetActive(true);
         bIsActive = true;

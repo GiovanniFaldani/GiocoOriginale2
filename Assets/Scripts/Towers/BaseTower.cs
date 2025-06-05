@@ -12,24 +12,39 @@ public class BaseTower : MonoBehaviour
 
     [Header("Parameters")]
     // Tempo (in secondi) dopo il quale la torretta può sparare di nuovo
-    private float nextFireTime = 0f;
+    protected float nextFireTime = 0f;
 
     // Lista dei bersagli attualmente nel raggio d’azione
     public List<Transform> targetsInRange = new List<Transform>();
 
-    private BaseProjectile_Pool pool;
+    protected Projectile_Pool pool;
 
-    private void Start()
+    public float timer;
+    public float timerCooldown;
+
+    protected void Start()
     {
-        pool = GetComponent<BaseProjectile_Pool>();
+        pool = GetComponent<Projectile_Pool>();
     }
 
-    private void Update()
+    protected void Update()
     {
         CleanNullTargets();
 
-        // Se c'è almeno un bersaglio e siamo oltre il tempo di ricarica...
-        if (targetsInRange.Count > 0 && Time.time >= nextFireTime)
+        if (timer < 0)
+        {
+            SearchTarget();
+        }
+        else
+        { 
+            timer -= Time.deltaTime;
+        }
+    }
+
+    protected virtual void SearchTarget()
+    {
+        // Se c'è almeno un bersaglio
+        if (targetsInRange.Count > 0 )
         {
             Transform target = targetsInRange[0];
 
@@ -38,10 +53,8 @@ public class BaseTower : MonoBehaviour
                 Debug.Log($"[BaseTower] Sparo a: {target.name}");
 
                 // Spara al primo bersaglio nella lista
-                ShootAt(targetsInRange[0]);
+                ShootAt(target);
 
-                // Imposta il prossimo momento in cui la torretta può sparare
-                nextFireTime = Time.time + (1f / fireRate);
             }
             else
             {
@@ -52,7 +65,7 @@ public class BaseTower : MonoBehaviour
 
 
     // Crea un proiettile e lo invia verso il bersaglio
-    private void ShootAt(Transform target)
+    protected void ShootAt(Transform target)
     {
         Debug.Log($"[BaseTower] Attivo proiettile contro: {target.name}");
         pool.ChooseProjectile().ActivateProjectile(target);
@@ -63,8 +76,7 @@ public class BaseTower : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            targetsInRange.Add(other.transform);
-            Debug.Log($"[BaseTower] Nemico entrato nel raggio: {other.name}");
+            targetsInRange.Add(other.transform);            
         }
     }
 
@@ -73,8 +85,7 @@ public class BaseTower : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            targetsInRange.Remove(other.transform);
-            Debug.Log($"[BaseTower] Nemico uscito dal raggio: {other.name}");
+            targetsInRange.Remove(other.transform);            
         }
     }
 

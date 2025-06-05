@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7868531235220360673}
   - component: {fileID: -334262521938698114}
-  - component: {fileID: 3218513039422924193}
   - component: {fileID: 5804659792318107510}
+  - component: {fileID: 4242256454354083697}
   m_Layer: 0
   m_Name: Archer_Tower
   m_TagString: Turret
@@ -52,22 +52,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   RangePreview: {fileID: 7493508283540440725}
---- !u!114 &3218513039422924193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2777911260358669632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1db1f75e8647f35419594a0b91dc8655, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePool: []
-  spawnPosition: {fileID: 2218729481513980611}
-  projectile_Prefab: {fileID: 608441391914679178, guid: 3024f905786c7f64c95693a5daf186a1, type: 3}
-  poolSize: 10
 --- !u!114 &5804659792318107510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,8 +65,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2218729481513980611}
-  fireRate: 0
+  fireRate: 2
   targetsInRange: []
+  timer: 0
+  timerCooldown: 0.5
+--- !u!114 &4242256454354083697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2777911260358669632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6777339cca08ad84baff6250a5bba743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePool: []
+  spawnPosition: {fileID: 2218729481513980611}
+  projectile_Prefab: {fileID: 608441391914679178, guid: 3024f905786c7f64c95693a5daf186a1, type: 3}
+  poolSize: 5
 --- !u!1 &7471744788831468423
 GameObject:
   m_ObjectHideFlags: 0

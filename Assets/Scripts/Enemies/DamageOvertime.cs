@@ -6,11 +6,11 @@ public class DamageOvertime : MonoBehaviour
     public float DotDamage;
     public float interval;
     public float duration;
+    public float timeElapsed;
 
     private Enemy enemy;
     private Coroutine DamageCoroutine;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemy = GetComponent<Enemy>(); //salvo componente script enemy
@@ -28,15 +28,16 @@ public class DamageOvertime : MonoBehaviour
 
     private IEnumerator ApplyDamageOvertime()
     {
-        float timeElapsed = 0; //tempo trascorso
+        timeElapsed = 0; //tempo trascorso
         while (timeElapsed < duration)
         {
             if (enemy != null && !enemy.HP.IsDead) //se presente componente enemy && enemy non è morto
             {
                 enemy.TakeDamage(DotDamage); //applica danno
+                Debug.LogError("eseguo danno");
             }
-            yield return new WaitForSeconds(interval); //attesa x secondi 
             timeElapsed += interval; //reset tempo trascorso per ripetere effetto
+            yield return new WaitForSeconds(interval); //attesa x secondi             
         }
     }
 }

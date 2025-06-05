@@ -8,6 +8,12 @@ public class MageProjectile : MonoBehaviour
 
     private Transform target; // Bersaglio da inseguire
     public Transform resetPosition;
+    public Enemy enemy;
+
+    private void Start()
+    {
+        enemy = GetComponent<Enemy>();
+    }
 
     void Update()
     {

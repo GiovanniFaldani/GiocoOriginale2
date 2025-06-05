@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HudUI : BaseUI
 {
@@ -12,5 +11,10 @@ public class HudUI : BaseUI
             UIManager.Instance.ShowUI(UIManager.GameUI.Pause);
             Time.timeScale = 0;
         }
+    }
+
+    public void PauseGame()
+    {
+        UIManager.Instance.ShowUI(UIManager.GameUI.Pause);
     }
 }

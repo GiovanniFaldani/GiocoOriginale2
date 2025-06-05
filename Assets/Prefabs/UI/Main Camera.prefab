@@ -610,6 +610,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4145778516130555861}
     m_Modifications:
+    - target: {fileID: 786208625803243219, guid: e055b538f97ebc94bb64beff68039770, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 3411931912688995698, guid: e055b538f97ebc94bb64beff68039770, type: 3}
       propertyPath: m_Name
       value: WallPreview
@@ -688,6 +692,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1837685126420984328}
     m_Modifications:
+    - target: {fileID: -3181076725185324489, guid: 56debce35f78494409b85ae8849953cc, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3181076725185324489, guid: 56debce35f78494409b85ae8849953cc, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 182123979079594928, guid: 56debce35f78494409b85ae8849953cc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.92340004
@@ -740,6 +752,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5066233870952591325, guid: 56debce35f78494409b85ae8849953cc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8808931724583337590, guid: 56debce35f78494409b85ae8849953cc, type: 3}
       propertyPath: m_Name
       value: Slow_Trap
@@ -762,6 +778,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2152976004656493256}
     m_Modifications:
+    - target: {fileID: -4517988766355044133, guid: a7628c83e5337614caad0bf6746a3b00, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179592381657159693, guid: a7628c83e5337614caad0bf6746a3b00, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179592381657159693, guid: a7628c83e5337614caad0bf6746a3b00, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 2266689740124336803, guid: a7628c83e5337614caad0bf6746a3b00, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.07
@@ -831,6 +859,10 @@ PrefabInstance:
     - target: {fileID: 606480918883006308, guid: 519ef9c7a2932c741ac229ef301b1a89, type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 606480918883006308, guid: 519ef9c7a2932c741ac229ef301b1a89, type: 3}
+      propertyPath: m_Constraints
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 988643094724105979, guid: 519ef9c7a2932c741ac229ef301b1a89, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -974,6 +1006,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4390136533987823532, guid: d82727addcad22c41b58b4f078ba0e4f, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390136533987823532, guid: d82727addcad22c41b58b4f078ba0e4f, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569062332844044008, guid: d82727addcad22c41b58b4f078ba0e4f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1036,9 +1080,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4844770590881531344, guid: bea69c4f9b9def54794320d24a90e02e, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4844770590881531344, guid: bea69c4f9b9def54794320d24a90e02e, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 7417523112912973128, guid: bea69c4f9b9def54794320d24a90e02e, type: 3}
       propertyPath: m_Name
       value: Mage_Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945708780078923619, guid: bea69c4f9b9def54794320d24a90e02e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

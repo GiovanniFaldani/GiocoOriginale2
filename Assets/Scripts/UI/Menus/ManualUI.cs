@@ -5,7 +5,7 @@ public class ManualUI : BaseUI
 {
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene(0);
+        UIManager.Instance.ShowUI(UIManager.GameUI.MainMenu);
     }
 
     public void GoToOptions()

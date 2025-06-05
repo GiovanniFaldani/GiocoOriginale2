@@ -15,6 +15,11 @@ public class MainMenuUI : BaseUI
         
     }
 
+    public void GoToLoadingScreen()
+    {
+        UIManager.Instance.ShowUI(UIManager.GameUI.Load);
+    }
+
     public void GoToHud()
     {
         Time.timeScale = 1f;
@@ -24,6 +29,11 @@ public class MainMenuUI : BaseUI
     public void GoToOptions()
     {
         UIManager.Instance.ShowUI(UIManager.GameUI.Option);
+    }
+
+    public void GoToManual()
+    {
+        UIManager.Instance.ShowUI(UIManager.GameUI.Manual);
     }
 
     public void ExitGame()

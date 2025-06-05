@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI monetePanel;
     public static UIManager Instance { get; private set; }
 
     public enum GameUI
@@ -13,6 +15,7 @@ public class UIManager : MonoBehaviour
         MainMenu,
         HUD,
         Pause,
+        Load,
         Win,
         Lose,
         Option,
@@ -40,6 +43,11 @@ public class UIManager : MonoBehaviour
         }
 
         ShowUI(startingGameUI);
+    }
+
+    private void Update()
+    {
+        monetePanel.text = GameManager.Instance.currentMoney.ToString();
     }
 
     public void ShowUI(GameUI uiType)

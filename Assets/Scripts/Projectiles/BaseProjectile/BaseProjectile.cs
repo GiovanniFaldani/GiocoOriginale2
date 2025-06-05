@@ -5,10 +5,16 @@ public class BaseProjectile : MonoBehaviour
 {
     public float speed; // Velocità del proiettile
     public float damage; // Danno inflitto al bersaglio
-    public bool bIsActive;
+    public bool bIsActive; // bool per controllo proiettile attivo in scena
 
     private Transform target; // Bersaglio da inseguire
-    public Transform resetPosition; 
+    public Transform resetPosition;
+    public Enemy enemy;
+
+    private void Start()
+    {
+        enemy = GetComponent<Enemy>();
+    }
 
     void Update()
     {
@@ -27,6 +33,7 @@ public class BaseProjectile : MonoBehaviour
     void HitTarget()
     {
         DeactivateProjectile();
+        enemy.TakeDamage(damage);
     }
 
 

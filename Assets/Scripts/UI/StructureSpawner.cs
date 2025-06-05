@@ -15,6 +15,10 @@ public class StructureSpawner : MonoBehaviour
 
     [SerializeField] GameObject wallPreviewPrefab;
     [SerializeField] GameObject archerTurretPreviewPrefab;
+    [SerializeField] GameObject alchemistTurretPreviewPrefab;
+    [SerializeField] GameObject mageTurretPreviewPrefab;
+    [SerializeField] GameObject slowTrapPreviewPrefab;
+    [SerializeField] GameObject spineTrapPreviewPrefab;
     [SerializeField] Vector3 spawnPosition;
 
     public void Spawn(Spawnable structureType)
@@ -73,6 +77,38 @@ public class StructureSpawner : MonoBehaviour
             preview.transform.parent = null;
             preview.transform.localScale = new Vector3(2, 2, 2);
             GameManager.Instance.AddToMoney(-costs[Spawnable.ArcherTurret]);
+        }
+        else
+        {
+            Debug.Log("Not enough money!");
+        }
+    }
+
+    public void SpawnAlchemistTurret()
+    {
+        //int cost = archerTurretPreviewPrefab.GetComponent<PlaceablePreview>().structureCost;
+        if (GameManager.Instance.GetCurrentMoney() >= costs[Spawnable.AreaTurret])
+        {
+            GameObject preview = Instantiate(alchemistTurretPreviewPrefab, spawnPosition, Quaternion.identity);
+            preview.transform.parent = null;
+            preview.transform.localScale = new Vector3(2, 2, 2);
+            GameManager.Instance.AddToMoney(-costs[Spawnable.AreaTurret]);
+        }
+        else
+        {
+            Debug.Log("Not enough money!");
+        }
+    }
+
+    public void SpawnMageTurret()
+    {
+        //int cost = archerTurretPreviewPrefab.GetComponent<PlaceablePreview>().structureCost;
+        if (GameManager.Instance.GetCurrentMoney() >= costs[Spawnable.MageTurret])
+        {
+            GameObject preview = Instantiate(mageTurretPreviewPrefab, spawnPosition, Quaternion.identity);
+            preview.transform.parent = null;
+            preview.transform.localScale = new Vector3(2, 2, 2);
+            GameManager.Instance.AddToMoney(-costs[Spawnable.MageTurret]);
         }
         else
         {

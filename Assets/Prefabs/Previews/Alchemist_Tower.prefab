@@ -146,9 +146,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2225842383553507319, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225842383553507319, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.533
+      objectReference: {fileID: 0}
     - target: {fileID: 3342759039598241420, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
       propertyPath: m_Name
       value: Torre Alchimista
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375712238249152049, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375712238249152049, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.533
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

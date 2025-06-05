@@ -110,6 +110,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torre Mago
       objectReference: {fileID: 0}
+    - target: {fileID: 4259425155435350441, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259425155435350441, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.535
+      objectReference: {fileID: 0}
     - target: {fileID: 5314053273002071653, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -149,6 +157,14 @@ PrefabInstance:
     - target: {fileID: 5314053273002071653, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044450461499975791, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044450461499975791, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.535
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

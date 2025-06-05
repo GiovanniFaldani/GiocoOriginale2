@@ -1,4 +1,6 @@
 using System.Collections.Concurrent;
+using System.Threading;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,13 +8,15 @@ public class GameManager : MonoBehaviour
     [Header("Starting player HP")]
     [SerializeField] private int startingHp = 10;
     [SerializeField] private int currentHp;
+    [SerializeField] private GameObject[] cuori;
     [Header("Starting player Money")]
     [SerializeField] private int startingMoney = 20;
-    [SerializeField] private int currentMoney;
+    [SerializeField] public int currentMoney;
 
     [SerializeField] private MessageUI messageUI;
 
-    private int currentWave = 0;
+    public int currentWave = 0;
+    public int difficulty = 1; // 0, 1 or 2
     private int[] highScores = { 0, 0, 0 };
 
     // Singleton behavior
@@ -28,6 +32,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        for( int i = 0; i < highScores.Length; i++)
+        {
+            highScores[i] = PlayerPrefs.GetInt("Difficulty" + i.ToString());
+        }
     }
 
     private void Start()
@@ -39,6 +48,18 @@ public class GameManager : MonoBehaviour
     public void AddToHp(int addendum)
     {
         currentHp += addendum;
+        for (int i = 0; i < startingHp; i++)
+        {
+            if(i > currentHp-1)
+            {
+                cuori[i].SetActive(false);
+            }
+            else
+            {
+                cuori[i].SetActive(true);
+            }
+        }
+
         CheckDeath();
     }
 
@@ -67,6 +88,12 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        // update records
+        if (highScores[difficulty] < currentWave)
+        {
+            highScores[difficulty] = currentWave;
+            PlayerPrefs.SetInt("Difficulty" + difficulty.ToString(), highScores[difficulty]); // save high score
+        }
         UIManager.Instance.ShowUI(UIManager.GameUI.Lose);
     }
 

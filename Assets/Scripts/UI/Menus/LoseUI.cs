@@ -10,6 +10,11 @@ public class LoseUI : BaseUI
         SceneManager.LoadScene(0);
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene(1); // Copy paste main scene but make starting menu the HUDUI lol
+    }
+
     public void ExitGame()
     {
 #if UNITY_EDITOR

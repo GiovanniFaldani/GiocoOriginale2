@@ -1660,6 +1660,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 166245274656230931, guid: c3d1d10aa9a2e034684d2141afb60df5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2705543725386525805, guid: c3d1d10aa9a2e034684d2141afb60df5, type: 3}
       propertyPath: areaSpawnPosition
       value: 
@@ -1711,6 +1715,10 @@ PrefabInstance:
     - target: {fileID: 4507478192944086523, guid: c3d1d10aa9a2e034684d2141afb60df5, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298765186597550504, guid: c3d1d10aa9a2e034684d2141afb60df5, type: 3}
+      propertyPath: poolSize
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -150,10 +150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 166245274656230931}
-  fireRate: 0.5
+  fireRate: 2
   targetsInRange: []
-  timer: 0
-  timerCooldown: 0.5
 --- !u!1001 &216109021618682965
 PrefabInstance:
   m_ObjectHideFlags: 0

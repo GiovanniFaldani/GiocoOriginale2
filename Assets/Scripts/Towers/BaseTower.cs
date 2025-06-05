@@ -19,9 +19,6 @@ public class BaseTower : MonoBehaviour
 
     protected Projectile_Pool pool;
 
-    public float timer;
-    public float timerCooldown;
-
     protected void Start()
     {
         pool = GetComponent<Projectile_Pool>();
@@ -30,21 +27,13 @@ public class BaseTower : MonoBehaviour
     protected void Update()
     {
         CleanNullTargets();
-
-        if (timer < 0)
-        {
-            SearchTarget();
-        }
-        else
-        { 
-            timer -= Time.deltaTime;
-        }
+        SearchTarget();
     }
 
     protected virtual void SearchTarget()
     {
-        // Se c'è almeno un bersaglio
-        if (targetsInRange.Count > 0 )
+        // Se c'è almeno un bersaglio e siamo oltre il tempo di ricarica...
+        if (targetsInRange.Count > 0 && Time.time >= nextFireTime)
         {
             Transform target = targetsInRange[0];
 
@@ -55,6 +44,8 @@ public class BaseTower : MonoBehaviour
                 // Spara al primo bersaglio nella lista
                 ShootAt(target);
 
+                // Imposta il prossimo momento in cui la torretta può sparare
+                nextFireTime = Time.time + (1f / fireRate);
             }
             else
             {

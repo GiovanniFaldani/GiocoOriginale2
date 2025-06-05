@@ -23,7 +23,7 @@ public class Projectile_Pool : MonoBehaviour
             GameObject proj;
             proj = Instantiate(projectile_Prefab, spawnPosition.position, Quaternion.identity);
             proj.transform.parent = transform;
-            projectilePool.Add(proj.GetComponent<BaseProjectile>());            
+            projectilePool.Add(proj.GetComponent<BaseProjectile>());
         }
 
         //disattivo oggetti instanziati

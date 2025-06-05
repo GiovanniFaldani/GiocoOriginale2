@@ -7,23 +7,29 @@ public class BaseProjectile : MonoBehaviour
     public float damage; // Danno inflitto al bersaglio
     public bool bIsActive; // bool per controllo proiettile attivo in scena
     public float bulletLifetime;
+    protected float bulletLifeTimer;
     Vector3 totalMovement;
 
     protected Transform target; // Bersaglio da inseguire
     public Transform resetPosition;
 
+    private void Start()
+    {
+        bulletLifeTimer = bulletLifetime;
+    }
+
     void Update()
     {
-        bulletLifetime -= Time.deltaTime;
+        bulletLifeTimer -= Time.deltaTime;
 
-        if (target != null && bulletLifetime > 0)
+        if (target != null && bulletLifeTimer > 0)
         {
             MoveProjectile();
         }
         else
         { 
             DeactivateProjectile();
-        }        
+        }
     }
 
     public void MoveProjectile()
@@ -51,6 +57,7 @@ public class BaseProjectile : MonoBehaviour
         gameObject.SetActive(true);
         bIsActive = true;
         target = _target;
+        bulletLifeTimer = bulletLifetime;
     }
 
     public void DeactivateProjectile()

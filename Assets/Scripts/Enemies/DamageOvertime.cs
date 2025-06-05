@@ -34,7 +34,7 @@ public class DamageOvertime : MonoBehaviour
             if (enemy != null && !enemy.HP.IsDead) //se presente componente enemy && enemy non è morto
             {
                 enemy.TakeDamage(DotDamage); //applica danno
-                Debug.LogError("eseguo danno");
+                Debug.Log("eseguo danno");
             }
             timeElapsed += interval; //reset tempo trascorso per ripetere effetto
             yield return new WaitForSeconds(interval); //attesa x secondi             

@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Enemy variables")]
     public Health HP;
-    [SerializeField] private float speed;
+    [SerializeField] public float speed;
     [SerializeField] private float attackDamage;
     [SerializeField] private float attackSpeed;
     [SerializeField] private float waveWeight;

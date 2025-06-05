@@ -152,6 +152,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7030750190731461670}
     m_Modifications:
+    - target: {fileID: 857924042676164269, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 8400000, guid: a8e7438470b01b64b898459ef4278b4e, type: 2}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -162,7 +166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 40.33
+      value: 59.14
       objectReference: {fileID: 0}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -287,13 +291,50 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4986679066035103294, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6370608004306888535}
   m_SourcePrefab: {fileID: 100100000, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
 --- !u!224 &1923978858656883970 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2857780920125499813, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
   m_PrefabInstance: {fileID: 4403315435322395815}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8660288216408320665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4986679066035103294, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+  m_PrefabInstance: {fileID: 4403315435322395815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6370608004306888535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660288216408320665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: StructureSpawner, Assembly-CSharp
+          m_MethodName: SpawnArcherTurret
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &5625999897745696885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -302,6 +343,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7030750190731461670}
     m_Modifications:
+    - target: {fileID: 857924042676164269, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 8400000, guid: 906d36394e4aa514f9b10a7a9317ead1, type: 2}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -312,7 +357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 19.62
+      value: 26.88
       objectReference: {fileID: 0}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -437,8 +482,45 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4986679066035103294, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5941128956862081725}
   m_SourcePrefab: {fileID: 100100000, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+--- !u!1 &803803652365094475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4986679066035103294, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+  m_PrefabInstance: {fileID: 5625999897745696885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5941128956862081725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803803652365094475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: StructureSpawner, Assembly-CSharp
+          m_MethodName: SpawnWall
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &7618807999640633808 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2857780920125499813, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
@@ -452,6 +534,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7030750190731461670}
     m_Modifications:
+    - target: {fileID: 857924042676164269, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 8400000, guid: 336e6525732971647abd12d1b76b6de5, type: 2}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -462,7 +548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 39.45
+      value: 57.92
       objectReference: {fileID: 0}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -587,8 +673,45 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4986679066035103294, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4021094946807311535}
   m_SourcePrefab: {fileID: 100100000, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+--- !u!1 &1561534404824933566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4986679066035103294, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+  m_PrefabInstance: {fileID: 5809521972601815680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4021094946807311535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561534404824933566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: StructureSpawner, Assembly-CSharp
+          m_MethodName: SpawnArcherTurret
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &8590460086587632421 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2857780920125499813, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
@@ -602,6 +725,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7030750190731461670}
     m_Modifications:
+    - target: {fileID: 857924042676164269, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 8400000, guid: 914f0f3b3f059a6449ece51d0d2160e8, type: 2}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -612,7 +739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 38.24
+      value: 56.25
       objectReference: {fileID: 0}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -737,8 +864,45 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4986679066035103294, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5785652444964176968}
   m_SourcePrefab: {fileID: 100100000, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+--- !u!1 &1377873179326313829 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4986679066035103294, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+  m_PrefabInstance: {fileID: 6209072366479102811}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5785652444964176968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377873179326313829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: StructureSpawner, Assembly-CSharp
+          m_MethodName: SpawnArcherTurret
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &8179644065367096062 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2857780920125499813, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
@@ -752,6 +916,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7030750190731461670}
     m_Modifications:
+    - target: {fileID: 857924042676164269, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 8400000, guid: 40084ebb4b05f904aa8ab4a024843607, type: 2}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -762,7 +930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 39.5
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -889,8 +1057,45 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4986679066035103294, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6575439133514669408}
   m_SourcePrefab: {fileID: 100100000, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+--- !u!1 &3306375626069520857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4986679066035103294, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+  m_PrefabInstance: {fileID: 7554407040035330023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6575439133514669408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3306375626069520857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: StructureSpawner, Assembly-CSharp
+          m_MethodName: SpawnArcherTurret
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &5728092426262560322 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2857780920125499813, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
@@ -904,6 +1109,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7030750190731461670}
     m_Modifications:
+    - target: {fileID: 857924042676164269, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 8400000, guid: 31d4f9fa545115f45b5d565ae1ed3834, type: 2}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -914,7 +1123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 60.89
+      value: 91.19
       objectReference: {fileID: 0}
     - target: {fileID: 1145065146582481988, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1039,10 +1248,84 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4986679066035103294, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2887662430950621604}
+    - targetCorrespondingSourceObject: {fileID: 778312653105819670, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8277845019334712767}
   m_SourcePrefab: {fileID: 100100000, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+--- !u!1 &3540220944878834158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4986679066035103294, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+  m_PrefabInstance: {fileID: 8364690847110838224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2887662430950621604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3540220944878834158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: StructureSpawner, Assembly-CSharp
+          m_MethodName: SpawnArcherTurret
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &6034184250293001845 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2857780920125499813, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
   m_PrefabInstance: {fileID: 8364690847110838224}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9140131559604537286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 778312653105819670, guid: 5ed1fd68f7414304eb73889ae4d03712, type: 3}
+  m_PrefabInstance: {fileID: 8364690847110838224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8277845019334712767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9140131559604537286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: StructureSpawner, Assembly-CSharp
+          m_MethodName: SpawnArcherTurret
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

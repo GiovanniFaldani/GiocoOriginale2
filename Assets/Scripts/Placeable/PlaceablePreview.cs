@@ -18,10 +18,6 @@ public class PlaceablePreview: MonoBehaviour
     {
         grid = FindAnyObjectByType<PlacementGrid>();
         rt = FindAnyObjectByType<ReachabilityTest>().GetComponent<ReachabilityTest>();
-        //meshFilter = GetComponentInChildren<MeshFilter>();
-        //meshRenderer = GetComponentInChildren<MeshRenderer>();
-        //meshFilter.mesh = placePrefab.GetComponentInChildren<MeshFilter>().sharedMesh;
-        //meshRenderer.material = placePrefab.GetComponentInChildren<MeshRenderer>().sharedMaterial;
     }
 
     private void Update()
@@ -65,8 +61,24 @@ public class PlaceablePreview: MonoBehaviour
                 break;
             case Spawnable.ArcherTurret:
                 grid.GetGridSnap(transform.position).built = true;
-                temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y+2, temp.transform.position.z);
+                temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y + 2, temp.transform.position.z);
                 temp.transform.localScale = new Vector3(2, 2, 2);
+                break;
+            case Spawnable.AreaTurret:
+                grid.GetGridSnap(transform.position).built = true;
+                temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y + 2, temp.transform.position.z);
+                break;
+            case Spawnable.MageTurret:
+                grid.GetGridSnap(transform.position).built = true;
+                temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y + 2, temp.transform.position.z);
+                break;
+            case Spawnable.SpineTrap:
+                grid.GetGridSnap(transform.position).built = true;
+                temp.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+                break;
+            case Spawnable.SlowTrap:
+                grid.GetGridSnap(transform.position).built = true;
+                temp.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
                 break;
         }
         temp.transform.parent = null; // unparent
@@ -107,7 +119,7 @@ public class PlaceablePreview: MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         if (collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Fortress") 
-            || collision.collider.CompareTag("Turret"))
+            || collision.collider.CompareTag("Turret") || collision.collider.CompareTag("Trap"))
         {
             disableBuild = true;
         }
@@ -117,10 +129,32 @@ public class PlaceablePreview: MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         if (collision.collider.CompareTag("Wall") || collision.collider.CompareTag("Fortress")
-            || collision.collider.CompareTag("Turret"))
+            || collision.collider.CompareTag("Turret") || collision.collider.CompareTag("Trap"))
         {
             disableBuild = false;
         }
 
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Wall") || other.CompareTag("Fortress") 
+            || other.CompareTag("Turret") || other.CompareTag("Trap"))
+        {
+            disableBuild = true;
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Wall") || other.CompareTag("Fortress")
+            || other.CompareTag("Turret") || other.CompareTag("Trap"))
+        {
+            disableBuild = false;
+        }
+
+    }
+
+
 }

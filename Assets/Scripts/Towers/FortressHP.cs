@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class FortressHP : MonoBehaviour
 {
-    public float fortressHP;
-    public float fortressMaxHP;
+    public int fortressHP;
+    public int fortressMaxHP;
     public bool bIsFortressDead;
 
     private void Awake()
@@ -12,9 +12,10 @@ public class FortressHP : MonoBehaviour
         bIsFortressDead = false;
     }
 
-    public void FortressTakeDamage(float damage)
+    public void FortressTakeDamage(int damage)
     {
         fortressHP = fortressHP - damage;
+        GameManager.Instance.AddToHp(-damage);
     }
 
     public void FortressDeath()

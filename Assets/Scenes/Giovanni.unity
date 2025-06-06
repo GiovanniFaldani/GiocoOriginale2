@@ -1221,6 +1221,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &946407761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 946407763}
+  - component: {fileID: 946407762}
+  m_Layer: 0
+  m_Name: WaveHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &946407762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946407761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d14e4b6b1244b1409fb5effaa1175a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList:
+  - {fileID: 2724049117396640452, guid: 7024741662a35d14e95f81f9e4dc3a3e, type: 3}
+  - {fileID: 4984390061577444369, guid: 91d75bd2f3665844c92ace92a7893e08, type: 3}
+  - {fileID: 8969258485911284967, guid: b89f5ea907528154fb2397d7a1600d1d, type: 3}
+  - {fileID: 2646861833484444852, guid: 3ca0d439559d86a4db505ed6362ca06e, type: 3}
+  spawnDistance: 1
+  currentWave: 0
+  enemiesAlive: 0
+  waveStrenght: 0
+  waveEndTimer: 7
+--- !u!4 &946407763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946407761}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 26.26273, y: -5.1655426, z: 23.956905}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &982851280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,7 +1914,6 @@ MonoBehaviour:
   startingMoney: 200
   currentMoney: 0
   messageUI: {fileID: 515161738}
-  currentWave: 0
   difficulty: 1
   highScores: 000000000000000000000000
 --- !u!1 &1563100665 stripped
@@ -4161,3 +4214,4 @@ SceneRoots:
   - {fileID: 1562787329}
   - {fileID: 116377123}
   - {fileID: 1783049706}
+  - {fileID: 946407763}

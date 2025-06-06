@@ -73,11 +73,11 @@ public class PlaceablePreview: MonoBehaviour
                 temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y + 2, temp.transform.position.z);
                 break;
             case Spawnable.SpineTrap:
-                grid.GetGridSnap(transform.position).built = true;
+                grid.GetGridSnap(transform.position).built = false;
                 temp.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
                 break;
             case Spawnable.SlowTrap:
-                grid.GetGridSnap(transform.position).built = true;
+                grid.GetGridSnap(transform.position).built = false;
                 temp.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
                 break;
         }

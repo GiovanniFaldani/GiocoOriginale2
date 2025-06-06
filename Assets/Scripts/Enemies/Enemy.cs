@@ -56,19 +56,16 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (meshPivot.localPosition.y > 0)
-        { meshPivot.localPosition += Vector3.down * Time.deltaTime; }
-
         if (debuffDuration > 0) { debuffDuration -= Time.deltaTime;}
 
         if (!HP.IsDead)
         {
             if (currentSquare.fortress)
             {
+                attackTimer -= Time.deltaTime;
                 if (attackTimer <= 0)
                 {
                     FortressHP.Instance.FortressTakeDamage(attackDamage);
-                    meshPivot.localPosition += Vector3.up;
                     attackTimer = attackSpeed;
                 }
             }

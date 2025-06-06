@@ -59,7 +59,7 @@ public class WaveHandler : MonoBehaviour
 
         Enemy en = Instantiate(affordableEnemies[Random.Range(0,affordableEnemies.Count)]);
         en.currentSquare = square; 
-        en.transform.position = spawnPoint - Vector3.down;
+        en.transform.position = spawnPoint + Vector3.down * 2;
         enemiesAlive++;
         waveStrenght -= en.waveWeight;
     }

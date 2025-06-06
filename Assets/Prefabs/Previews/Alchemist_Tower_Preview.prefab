@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5703664046409994102}
   - component: {fileID: 2179592381657159693}
   - component: {fileID: -4517988766355044133}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Alchemist_Tower_Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,6 +106,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2266689740124336803}
     m_Modifications:
+    - target: {fileID: 10802573469519192, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 430525900382919095, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -146,6 +150,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 501053759850465622, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 617975567587075875, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924723807189854594, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2027081344780649448, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2225842383553507319, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5
@@ -158,6 +178,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torre Alchimista
       objectReference: {fileID: 0}
+    - target: {fileID: 3342759039598241420, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5213587123161534226, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538770840726581899, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566789523012638480, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6375712238249152049, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5
@@ -165,6 +201,10 @@ PrefabInstance:
     - target: {fileID: 6375712238249152049, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.533
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763509370846549718, guid: b22a21bd782f5824981d6bc3e6a01a6b, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

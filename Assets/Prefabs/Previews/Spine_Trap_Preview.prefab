@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7451899417843644719}
   - component: {fileID: 4390136533987823532}
   - component: {fileID: 6569062332844044008}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spine_Trap_Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,9 +106,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4381794770804966145}
     m_Modifications:
+    - target: {fileID: 265314398005744219, guid: 9d77d0af5edee814186b009716b79636, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 958010172704996694, guid: 9d77d0af5edee814186b009716b79636, type: 3}
       propertyPath: m_Name
       value: Trappola Spine
+      objectReference: {fileID: 0}
+    - target: {fileID: 958010172704996694, guid: 9d77d0af5edee814186b009716b79636, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133705967172662123, guid: 9d77d0af5edee814186b009716b79636, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3625461536736472834, guid: 9d77d0af5edee814186b009716b79636, type: 3}
       propertyPath: m_LocalPosition.x
@@ -149,6 +161,22 @@ PrefabInstance:
     - target: {fileID: 3625461536736472834, guid: 9d77d0af5edee814186b009716b79636, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4580128276225186339, guid: 9d77d0af5edee814186b009716b79636, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784116669402192193, guid: 9d77d0af5edee814186b009716b79636, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424183921553911252, guid: 9d77d0af5edee814186b009716b79636, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725268665333483262, guid: 9d77d0af5edee814186b009716b79636, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

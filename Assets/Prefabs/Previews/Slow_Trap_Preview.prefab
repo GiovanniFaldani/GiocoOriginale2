@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2527667148347394499}
   - component: {fileID: -3181076725185324489}
   - component: {fileID: 5066233870952591325}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Slow_Trap_Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,9 +106,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 182123979079594928}
     m_Modifications:
+    - target: {fileID: 1820268245055598537, guid: 07f448707b0bbb64f84748d323977e6f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694155604544743345, guid: 07f448707b0bbb64f84748d323977e6f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3472954270583483513, guid: 07f448707b0bbb64f84748d323977e6f, type: 3}
       propertyPath: m_Name
       value: Trappola Radici
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472954270583483513, guid: 07f448707b0bbb64f84748d323977e6f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907228437294166804, guid: 07f448707b0bbb64f84748d323977e6f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8732032160076567144, guid: 07f448707b0bbb64f84748d323977e6f, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9121204484138538904, guid: 07f448707b0bbb64f84748d323977e6f, type: 3}
       propertyPath: m_LocalPosition.x

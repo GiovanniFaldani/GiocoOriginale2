@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     public int currentWave = 0;
     public int difficulty = 1; // 0, 1 or 2
-    private int[] highScores = { 0, 0, 0 };
+    public int[] highScores = { 0, 0, 0 };
 
     // Singleton behavior
     public static GameManager Instance { get; private set; }

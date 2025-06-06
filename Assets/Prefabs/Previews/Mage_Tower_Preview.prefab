@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3551955671921862637}
   - component: {fileID: 4844770590881531344}
   - component: {fileID: 7945708780078923619}
-  m_Layer: 0
-  m_Name: Mage_Tower
+  m_Layer: 2
+  m_Name: Mage_Tower_Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5919318117138207823}
   m_Father: {fileID: 0}
@@ -78,10 +78,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &7945708780078923619
 MonoBehaviour:
@@ -109,6 +109,38 @@ PrefabInstance:
     - target: {fileID: 274553042977241723, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
       propertyPath: m_Name
       value: Torre Mago
+      objectReference: {fileID: 0}
+    - target: {fileID: 274553042977241723, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943775255528493390, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158393116419066496, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3115912328550140042, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325527408952283272, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3439125755494757651, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259425155435350441, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259425155435350441, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.535
       objectReference: {fileID: 0}
     - target: {fileID: 5314053273002071653, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
       propertyPath: m_LocalPosition.x
@@ -149,6 +181,30 @@ PrefabInstance:
     - target: {fileID: 5314053273002071653, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152262659195947712, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7319345147456982734, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7779103717323710651, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044450461499975791, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044450461499975791, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.535
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171074464641516656, guid: 081a5efd187811d44988bd3d47dab549, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

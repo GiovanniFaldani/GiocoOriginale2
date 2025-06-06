@@ -6,7 +6,7 @@ using UnityEditor.Experimental.GraphView;
 
 public class Projectile_Pool : MonoBehaviour
 {
-    [SerializeField] List<Projectile> projectilePool = new List<Projectile>();
+    [SerializeField] List<BaseProjectile> projectilePool = new List<BaseProjectile>();
 
     public Transform spawnPosition;
 
@@ -15,18 +15,17 @@ public class Projectile_Pool : MonoBehaviour
     public int poolSize;
 
     
-    //TODO implementare aggiornamento rotazione proiettile nell'update
-
     private void Start()
     {
         //instanzio gli oggetti in scena e aggiungo gli script alla lista
         for (int i = 0; i < poolSize; i++)
         {
             GameObject proj;
-
             proj = Instantiate(projectile_Prefab, spawnPosition.position, Quaternion.identity);
-            projectilePool.Add(proj.GetComponent<Projectile>());            
+            proj.transform.parent = transform;
+            projectilePool.Add(proj.GetComponent<BaseProjectile>());
         }
+
         //disattivo oggetti instanziati
         for (int i = 0; i < projectilePool.Count; i++)
         {
@@ -36,9 +35,9 @@ public class Projectile_Pool : MonoBehaviour
     }
 
     //controllo se ho script del proiettile disponibili
-    public Projectile ChooseProjectile()
+    public BaseProjectile ChooseProjectile()
     {
-        foreach (Projectile p in projectilePool)
+        foreach (BaseProjectile p in projectilePool)
         {
             if (!p.bIsActive) //controllo se ho proiettili non attivi in scena
             { 

@@ -55,7 +55,7 @@ public class StructureSelector : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            if (hit.collider.CompareTag("Wall") || hit.collider.CompareTag("Turret"))
+            if (hit.collider.CompareTag("Wall") || hit.collider.CompareTag("Turret") || hit.collider.CompareTag("Trap"))
             {
                 // deselect previous selection if it exists
                 List<Material> m_list = new List<Material>();

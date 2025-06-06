@@ -37,7 +37,7 @@ public class PlacementGrid : MonoBehaviour
             }
         }
     }
-
+    /*
     private void OnDrawGizmosSelected()
     {
         float displayDelta = 0.1f;
@@ -70,6 +70,7 @@ public class PlacementGrid : MonoBehaviour
             }
         }
     }
+    */
 
     public GridSquare GetGridSnap(Vector3 worldPosition)
     {

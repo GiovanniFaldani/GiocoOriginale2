@@ -82,7 +82,7 @@ public class Enemy : MonoBehaviour
                 else
                 { 
                     transform.Translate((currentSquare.worldPosition + Vector3.down - transform.position).normalized * Time.deltaTime * gridSpeed,Space.World);
-                    transform.rotation = Quaternion.LookRotation((currentSquare.worldPosition + Vector3.down - transform.position).normalized + Vector3.up * 90);
+                    transform.rotation = Quaternion.LookRotation((currentSquare.worldPosition + Vector3.down - transform.position).normalized);
                 }
             }
         }

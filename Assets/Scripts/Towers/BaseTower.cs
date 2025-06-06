@@ -12,61 +12,77 @@ public class BaseTower : MonoBehaviour
 
     [Header("Parameters")]
     // Tempo (in secondi) dopo il quale la torretta può sparare di nuovo
-    private float nextFireTime = 0f;
+    protected float nextFireTime = 0f;
 
     // Lista dei bersagli attualmente nel raggio d’azione
     public List<Transform> targetsInRange = new List<Transform>();
 
-    private Projectile_Pool pool;
+    protected Projectile_Pool pool;
 
-    private void Start()
+    protected void Start()
     {
         pool = GetComponent<Projectile_Pool>();
     }
 
-    private void Update()
+    protected void Update()
+    {
+        CleanNullTargets();
+        SearchTarget();
+    }
+
+    protected virtual void SearchTarget()
     {
         // Se c'è almeno un bersaglio e siamo oltre il tempo di ricarica...
         if (targetsInRange.Count > 0 && Time.time >= nextFireTime)
         {
-            // Spara al primo bersaglio nella lista
-            ShootAt(targetsInRange[0]);
+            Transform target = targetsInRange[0];
 
-            // Imposta il prossimo momento in cui la torretta può sparare
-            nextFireTime = Time.time + (1f / fireRate);
+            if (target != null && !target.gameObject.GetComponent<Enemy>().HP.IsDead)
+            {
+                Debug.Log($"[BaseTower] Sparo a: {target.name}");
+
+                // Spara al primo bersaglio nella lista
+                ShootAt(target);
+
+                // Imposta il prossimo momento in cui la torretta può sparare
+                nextFireTime = Time.time + (1f / fireRate);
+            }
+            else
+            {
+                Debug.Log("[BaseTower] Il bersaglio non è valido.");
+            }
         }
     }
 
 
     // Crea un proiettile e lo invia verso il bersaglio
-    private void ShootAt(Transform target)
+    protected void ShootAt(Transform target)
     {
+        Debug.Log($"[BaseTower] Attivo proiettile contro: {target.name}");
         pool.ChooseProjectile().ActivateProjectile(target);
     }
 
     // Aggiunge un nemico alla lista quando entra nel trigger
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
-            targetsInRange.Add(other.transform);
+            targetsInRange.Add(other.transform);            
         }
     }
 
     // Rimuove il nemico dalla lista quando esce dal trigger
-    private void OnTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
-            targetsInRange.Remove(other.transform);
+            targetsInRange.Remove(other.transform);            
         }
     }
 
     // Pulisce la lista dei bersagli
     private void CleanNullTargets()
     {
-        int countBefore = targetsInRange.Count;
-
         // Creiamo una nuova lista per i bersagli validi (non null)
         List<Transform> validTargets = new List<Transform>();
 
@@ -77,22 +93,13 @@ public class BaseTower : MonoBehaviour
             {
                 validTargets.Add(t); // aggiungiamo solo quelli validi
             }
+            else
+            {
+                Debug.Log("[BaseTower] Rimosso bersaglio nullo o morto.");
+            }
         }
 
         // Sostituiamo la lista originale con quella pulita
         targetsInRange = validTargets;
-
-        int countAfter = targetsInRange.Count;
-
-    }
-
-    // debug range
-    private void OnDrawGizmosSelected()
-    {
-        if (targetsInRange.Count > 0 && targetsInRange[0] != null)
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(firePoint.position, targetsInRange[0].position);
-        }
     }
 }

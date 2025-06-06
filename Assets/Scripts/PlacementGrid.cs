@@ -11,8 +11,13 @@ public class PlacementGrid : MonoBehaviour
     public GridSquare[,] grid;
     public List<GridSquare> path;
 
+    private static PlacementGrid instance;
+    public static PlacementGrid Instance {  get { return instance; } }
+
     private void Awake()
     {
+        instance = this;
+
         Vector3 center = transform.position;
         grid = new GridSquare[gridSizeX, gridSizeY];
 
@@ -26,6 +31,9 @@ public class PlacementGrid : MonoBehaviour
                     transform.position.z + gridHalfStep + y * (2 * gridHalfStep));
 
                 grid[x, y] = new GridSquare(worldPosition, x, y);
+
+                if ((x == 9 || x == 10) && (y == 9 || y == 10))
+                { grid[x, y].fortress = true; }
             }
         }
     }
@@ -48,12 +56,17 @@ public class PlacementGrid : MonoBehaviour
             {
                 Gizmos.color = Color.blue;
 
-                //if(gsq == check)
-                if (path.Contains(gsq))
-                { Gizmos.color = Color.red;  }
+                if (path != null)
+                {
+                    //if(gsq == check)
+                    if (path.Contains(gsq))
+                    { Gizmos.color = Color.red; }
+
+                }
+                if (gsq.fortress)
+                { Gizmos.color = Color.yellow; }
 
                 Gizmos.DrawCube(gsq.worldPosition, Vector3.one * (2 * (gridHalfStep - displayDelta)));
-
             }
         }
     }
@@ -86,21 +99,28 @@ public class PlacementGrid : MonoBehaviour
     {
         List<GridSquare> neighbours = new List<GridSquare>();
 
-        for (int x = -1; x <= 1; x++)
+        Vector2[] dirs = { Vector2.up, Vector2.down, Vector2.right, Vector2.left };
+        foreach (Vector2 dir in dirs)
         {
-            for (int y = -1; y <= 1; y++)
-            {
-                if (x == 0 && y == 0)
-                    continue;
+            int checkX = currentSquare.gridX + (int)dir.x;
+            int checkY = currentSquare.gridY + (int)dir.y;
 
-                int checkX = currentSquare.gridX + x;
-                int checkY = currentSquare.gridY + y;
+            if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
+                neighbours.Add(grid[checkX, checkY]);
 
-                if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
-                    neighbours.Add(grid[checkX, checkY]);
-            }
         }
 
         return neighbours;
+    }
+    public int GetEnemyAmount(GridSquare square)
+    {
+        Collider[] coll = Physics.OverlapBox(square.worldPosition, gridHalfStep * Vector3.one);
+        int counter = 0;
+        foreach (Collider col in coll) 
+        { 
+            if (col.CompareTag("Enemy")) 
+            {  counter++; } 
+        } 
+        return counter;
     }
 }

@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     public void AddToHp(int addendum)
     {
-        currentHp += addendum;
+        currentHp = Mathf.Clamp(currentHp + addendum, 0, startingHp);
         for (int i = 0; i < startingHp; i++)
         {
             if(i > currentHp-1)

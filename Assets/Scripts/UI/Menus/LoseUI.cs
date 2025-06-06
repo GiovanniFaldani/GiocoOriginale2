@@ -12,7 +12,7 @@ public class LoseUI : BaseUI
 
     public void Restart()
     {
-        SceneManager.LoadScene(1); // Copy paste main scene but make starting menu the HUDUI lol
+        SceneManager.LoadScene(0); // Copy paste main scene but make starting menu the HUDUI lol
     }
 
     public void ExitGame()

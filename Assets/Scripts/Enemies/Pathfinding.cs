@@ -28,9 +28,6 @@ using System.Collections.Generic;
 
 public class Pathfinding : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    [SerializeField] float speed = 1.0f;
-
     private PlacementGrid grid;
 
     private void Start()
@@ -87,7 +84,7 @@ public class Pathfinding : MonoBehaviour
                 }
             }
         }
-
+        Debug.Log("Test");
         return new List<GridSquare>();
     }
 

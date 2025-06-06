@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4090308174667600949}
   - component: {fileID: 8908825540912214370}
-  - component: {fileID: 5086248264824147650}
-  - component: {fileID: 2849206169013254296}
   - component: {fileID: 5962914402060922826}
   m_Layer: 0
   m_Name: TestEnemy
@@ -50,55 +48,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testing: 1
   HP:
-    MaxHealth: 10
-    CurrentHealth: 10
+    MaxHealth: 5
+    CurrentHealth: 5
     IsDead: 0
   speed: 1
-  fortDamage: 1
+  attackDamage: 1
+  attackSpeed: 1
+  waveWeight: 1
   fallOverTime: 2
   disappearTime: 2
---- !u!114 &5086248264824147650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2750047880996051468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SerializedVersion: 0
-  m_OverrideArea: 0
-  m_Area: 0
-  m_OverrideGenerateLinks: 0
-  m_GenerateLinks: 0
-  m_IgnoreFromBuild: 1
-  m_ApplyToChildren: 1
-  m_AffectedAgents: ffffffff
---- !u!195 &2849206169013254296
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2750047880996051468}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  gridSpeed: 0.25
 --- !u!136 &5962914402060922826
 CapsuleCollider:
   m_ObjectHideFlags: 0

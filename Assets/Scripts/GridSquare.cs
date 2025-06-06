@@ -3,6 +3,7 @@ using UnityEngine;
 public class GridSquare
 {
     public bool built = false;
+    public bool fortress = false;
     public int gridX;
     public int gridY;
     public Vector3 worldPosition;

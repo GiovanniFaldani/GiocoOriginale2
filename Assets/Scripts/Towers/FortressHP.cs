@@ -6,8 +6,12 @@ public class FortressHP : MonoBehaviour
     public int fortressMaxHP;
     public bool bIsFortressDead;
 
+    private static FortressHP instance;
+    public static FortressHP Instance {  get { return instance; } }
+
     private void Awake()
     {
+        instance = this;
         fortressHP = fortressMaxHP;
         bIsFortressDead = false;
     }

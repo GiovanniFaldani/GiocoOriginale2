@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private MessageUI messageUI;
 
-    public int currentWave = 0;
     public int difficulty = 1; // 0, 1 or 2
     public int[] highScores = { 0, 0, 0 };
 
@@ -63,11 +62,6 @@ public class GameManager : MonoBehaviour
         CheckDeath();
     }
 
-    public void AddToWave(int addendum)
-    {
-        currentWave += addendum;
-    }
-
     public int GetCurrentMoney()
     {
         return currentMoney;
@@ -89,9 +83,9 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         // update records
-        if (highScores[difficulty] < currentWave)
+        if (highScores[difficulty] < WaveHandler.Instance.currentWave)
         {
-            highScores[difficulty] = currentWave;
+            highScores[difficulty] = (int)WaveHandler.Instance.currentWave;
             PlayerPrefs.SetInt("Difficulty" + difficulty.ToString(), highScores[difficulty]); // save high score
         }
         UIManager.Instance.ShowUI(UIManager.GameUI.Lose);

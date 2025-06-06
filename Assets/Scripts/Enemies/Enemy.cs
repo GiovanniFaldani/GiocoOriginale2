@@ -37,6 +37,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] float disappearTime = 1;
     [SerializeField] float gridSpeed = 0.25f;
 
+    private float debuffStrenght = 1;
+    private float debuffDuration = 0;
+
     private void Awake()
     {
         meshPivot = GetComponentInChildren<Transform>();
@@ -56,13 +59,15 @@ public class Enemy : MonoBehaviour
         if (meshPivot.localPosition.y > 0)
         { meshPivot.localPosition += Vector3.down * Time.deltaTime; }
 
+        if (debuffDuration > 0) { debuffDuration -= Time.deltaTime;}
+
         if (!HP.IsDead)
         {
             if (currentSquare.fortress)
             {
                 if (attackTimer <= 0)
-                { 
-                    GameManager.Instance.AddToHp(-attackDamage);
+                {
+                    FortressHP.Instance.FortressTakeDamage(attackDamage);
                     meshPivot.localPosition += Vector3.up;
                     attackTimer = attackSpeed;
                 }
@@ -77,6 +82,7 @@ public class Enemy : MonoBehaviour
                     {
                         currentSquare = PF.FindPath(transform.position, Vector3.up)[0]; 
                         moveTimer = speed;
+                        if (debuffDuration > 0) { moveTimer *= (1 + debuffStrenght); }
                     }
                 }
                 else
@@ -114,5 +120,10 @@ public class Enemy : MonoBehaviour
         HP.IsDead = true;
         GetComponent<Collider>().enabled = false;
         WaveHandler.Instance.enemiesAlive--;
+    }
+    public void ApplyDebuff(float str,float dur)
+    {
+        debuffDuration = dur;
+        debuffStrenght = str;
     }
 }

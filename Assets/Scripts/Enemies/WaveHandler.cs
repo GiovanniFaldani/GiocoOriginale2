@@ -7,7 +7,7 @@ public class WaveHandler : MonoBehaviour
     [SerializeField] Enemy[] enemyList = new Enemy[4];
     [SerializeField] float spawnDistance = 1.0f;
 
-    [SerializeField] private float currentWave = 0;
+    public float currentWave = 0;
     public int enemiesAlive = 0;
     [SerializeField] private float waveStrenght = 0;
 
@@ -59,7 +59,7 @@ public class WaveHandler : MonoBehaviour
 
         Enemy en = Instantiate(affordableEnemies[Random.Range(0,affordableEnemies.Count)]);
         en.currentSquare = square; 
-        en.transform.position = spawnPoint;
+        en.transform.position = spawnPoint - Vector3.down;
         enemiesAlive++;
         waveStrenght -= en.waveWeight;
     }

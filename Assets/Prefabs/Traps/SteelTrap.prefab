@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3447691188543355667}
   - component: {fileID: 2262230060823196892}
   - component: {fileID: 787183347326645518}
+  - component: {fileID: -3702071668837057544}
   m_Layer: 0
   m_Name: SteelTrap
   m_TagString: Trap
@@ -91,6 +92,20 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!114 &-3702071668837057544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5096588347975140876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d96a7b542b8c2a4ba0dc60dedb35551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+  RangePreview: {fileID: 0}
 --- !u!1001 &4644291507938832160
 PrefabInstance:
   m_ObjectHideFlags: 0

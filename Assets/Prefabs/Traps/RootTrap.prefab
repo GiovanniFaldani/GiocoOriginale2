@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5589283415455855963}
   - component: {fileID: 8965502030106955860}
   - component: {fileID: 8358519584128791885}
+  - component: {fileID: 6999103467260219000}
+  - component: {fileID: 7050666143499848311}
   m_Layer: 0
   m_Name: RootTrap
   m_TagString: Trap
@@ -69,6 +71,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debuffAmount: 0.25
   debuffDuration: 3
+--- !u!114 &6999103467260219000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124567936059173983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d96a7b542b8c2a4ba0dc60dedb35551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 5
+  RangePreview: {fileID: 0}
+--- !u!114 &7050666143499848311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124567936059173983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &4126925548139874849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80,6 +116,10 @@ PrefabInstance:
     - target: {fileID: 3472954270583483513, guid: 07f448707b0bbb64f84748d323977e6f, type: 3}
       propertyPath: m_Name
       value: Trappola Radici
+      objectReference: {fileID: 0}
+    - target: {fileID: 3472954270583483513, guid: 07f448707b0bbb64f84748d323977e6f, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     - target: {fileID: 9121204484138538904, guid: 07f448707b0bbb64f84748d323977e6f, type: 3}
       propertyPath: m_LocalPosition.x
